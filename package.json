@@ -1,6 +1,6 @@
 {
   "name": "frontful-queue-monitor",
-  "description": "Message queue microservice monitor for `frontful-queue`",
+  "description": "Message queue micro service job and task monitor",
   "private": true,
   "engines": {
     "node": ">=6"
