@@ -1604,13 +1604,13 @@ date-now@^0.1.4:
   version "0.1.4"
   resolved "https://registry.yarnpkg.com/date-now/-/date-now-0.1.4.tgz#eaf439fd4d4848ad74e5cc7dbef200672b9e345b"
 
-debug@2.6.7, debug@^2.1.1:
+debug@2.6.7:
   version "2.6.7"
   resolved "https://registry.yarnpkg.com/debug/-/debug-2.6.7.tgz#92bad1f6d05bbb6bba22cca88bcd0ec894c2861e"
   dependencies:
     ms "2.0.0"
 
-debug@2.6.8, debug@^2.2.0, debug@^2.6.8, debug@~2.6.4, debug@~2.6.6:
+debug@2.6.8, debug@^2.1.1, debug@^2.2.0, debug@^2.6.8, debug@~2.6.4, debug@~2.6.6:
   version "2.6.8"
   resolved "https://registry.yarnpkg.com/debug/-/debug-2.6.8.tgz#e731531ca2ede27d188222427da17821d68ff4fc"
   dependencies:
@@ -2297,8 +2297,8 @@ fresh@0.5.0:
     object-path "^0.11.4"
 
 "frontful-dao@0.x || 1.x":
-  version "0.0.11"
-  resolved "https://registry.yarnpkg.com/frontful-dao/-/frontful-dao-0.0.11.tgz#c8872ea9e59faf3a46e2ff18c094e9144e496829"
+  version "0.0.12"
+  resolved "https://registry.yarnpkg.com/frontful-dao/-/frontful-dao-0.0.12.tgz#2e1ff89b08aa225e608798a839de3746c90472d4"
   dependencies:
     deep-equal "^1.0.1"
     deep-extend "^0.5.0"
