@@ -1,0 +1,24 @@
+@import "~normalize.css/normalize.css";
+@import "~codemirror/lib/codemirror.css";
+
+html, body {
+  background-color: #ececec;
+  color: #333333;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  font-weight: 200;
+  margin: 0;
+  padding: 0;
+}
+
+input {
+  color: #333333;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: 15px;
+  font-weight: 200;
+  outline: none;
+}
+
+.CodeMirror-gutters {
+  border: none;
+}
