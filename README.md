@@ -2,12 +2,11 @@
 
 `frontful-queue-monitor` is job and task monitor for [`frontful-queue`](https://github.com/frontful/frontful-queue) message queue micro service to overview and filter messages, view message details including its full state (as well as edit and resend messages in the future).
 
-
 ### Configuration
 
-Configuration is done `config.js` file and it can be modified or replaced after production build.
+Configuration is done by modifying [`config.js`](Configuration is done). `config.js` can be modified and replaced after production build.
 
-- **`common.api`** - `frontful-queue` API url e.g. `http://localhost:7010/api`.
+- **`common.api`** - `frontful-queue` API url e.g. `http://localhost:7010/api` by default.
 - **`common.utcOffset`** - Time offset in minutes for time to be rendered the same on server and client.
 - **`common.content`** - Text content keys and values, used to add mapping between job and task names to their descriptions.
 
