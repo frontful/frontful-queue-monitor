@@ -7,7 +7,7 @@
     "node": ">=6"
   },
   "frontful": {
-    "config": "./config.js",
+    "config": "./config/sample/config.development.js",
     "environment": {
       "server": {
         "port": 7015
@@ -28,23 +28,30 @@
   },
   "dependencies": {
     "codemirror": "^5.27.4",
+    "cookie-parser": "^1.4.3",
     "cross-env": "^5.0.1",
+    "debounce-hashed": "^0.2.0",
+    "deep-extend": "^0.5.0",
     "express": "^4.15.2",
-    "frontful-config": "0.x || 1.x",
-    "frontful-dao": "0.x || 1.x",
-    "frontful-environment": "0.x || 1.x",
-    "frontful-model": "0.x || 1.x",
-    "frontful-resolver": "0.x || 1.x",
-    "frontful-router": "0.x || 1.x",
-    "frontful-style": "0.x || 1.x",
-    "frontful-utils": "0.x || 1.x",
+    "file-saver": "^1.3.3",
+    "frontful-config": "2.x",
+    "frontful-dao": "2.x",
+    "frontful-environment": "2.x",
+    "frontful-model": "2.x",
+    "frontful-resolver": "2.x",
+    "frontful-router": "2.x",
+    "frontful-style": "2.x",
+    "frontful-utils": "2.x",
     "mobx": "^3.1.16",
     "moment": "^2.18.1",
     "normalize.css": "^7.0.0",
     "object-path": "^0.11.4",
-    "react": "^15.5.4",
+    "react": "^16.0.0",
     "react-codemirror": "^1.0.0",
-    "react-dom": "^15.5.4"
+    "react-datepicker": "^0.56.0",
+    "react-dom": "^16.0.0",
+    "react-split-pane": "^0.1.66",
+    "socket.io-client": "^2.0.3"
   },
   "devDependencies": {
     "archiver": "^2.0.0"

@@ -3,7 +3,11 @@ export default ({css}) => {
     cursor: 'pointer',
   })
 
-  css('.job:hover > tr, .job.active > tr', {
+  css('.job:hover > tr', {
+    backgroundColor: '#fafafa',
+  })
+
+  css('.job.active > tr', {
     backgroundColor: '#f7f7f7',
   })
 
@@ -26,7 +30,6 @@ export default ({css}) => {
     height: '16px',
     width: '16px',
     borderRadius: '10px',
-    boxShadow: 'inset -2px -2px 6px 0px rgba(0, 0, 0, 0.2)'
   })
 
   css('.accent.success', {
@@ -39,7 +42,6 @@ export default ({css}) => {
 
   css('.accent.queued', {
     backgroundColor: '#F4D41D',
-    animation: 'pulse 1s 0s infinite',
   })
 
   css('.accent.processing', {
@@ -54,10 +56,5 @@ export default ({css}) => {
     css('50%', {
       transform: 'scale(.5)'
     })
-  })
-
-  css('.editor', {
-    padding: '0 !important',
-    fontSize: '12px',
   })
 }

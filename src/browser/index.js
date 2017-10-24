@@ -1,5 +1,6 @@
 import '../views/index.scss'
 import 'codemirror/mode/javascript/javascript'
+import 'codemirror/mode/xml/xml'
 
 import React from 'react'
 import ReactDOM from 'react-dom'
@@ -14,7 +15,7 @@ environment.coldreload.serializer = () => models.serialize()
 environment.coldreload.deserializer = (state) => models.deserialize(state)
 
 resolver.execute().then((View) => {
-  ReactDOM.render(
+  ReactDOM.hydrate(
     <Style>
       <View />
     </Style>,

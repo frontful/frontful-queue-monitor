@@ -18,10 +18,6 @@ const svc = new Service({
       name: 'PORT',
       value: process.env.PORT || 7015,
     },
-    {
-      name: 'HOST',
-      value: process.env.HOST || 'localhost',
-    },
   ],
 })
 

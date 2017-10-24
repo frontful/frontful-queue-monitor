@@ -3,6 +3,7 @@ import {Resolver} from 'frontful-resolver'
 
 function initialize(element, {req, res} = {}) {
   const models = new Models({
+    req: req,
     config: {
       'frontful-router': {req, res}
     }

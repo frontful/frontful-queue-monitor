@@ -1,5 +1,7 @@
 *.log
 .DS_Store
 /build
+/config/*
+!/config/sample
+/node_modules
 /package
-node_modules
