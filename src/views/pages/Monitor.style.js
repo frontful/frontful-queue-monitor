@@ -15,16 +15,7 @@ export default ({css}) => {
     minWidth: 'fit-content',
   })
 
-  // css('.main_pane', {
-  //   overflow: 'auto',
-  //   width: '100%',
-  // })
-  //
-  // css('.secondary_pane', {
-  //   overflow: 'auto',
-  //   width: '100%',
-  // })
-
-
-
+  css('.loading *', {
+    cursor: 'wait !important',
+  })
 }

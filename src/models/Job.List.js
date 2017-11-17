@@ -14,9 +14,9 @@ function getFilters() {
     count: 20,
     where: null,
     dateStart: moment().utc().add(1, 'days').startOf('day').valueOf(),
-    dateEnd: moment().utc().startOf('day').valueOf(),
+    dateEnd: moment().utc().add(-1, 'days').startOf('day').valueOf(),
     job: '',
-    state: '',
+    state: Array(browserConfig.stateParts).fill(''),
     status: '',
     tag01: '',
     tag02: '',
@@ -37,6 +37,7 @@ function getFilters() {
     jobs: formatter.array(formatter.model(JobItem)),
     url: null,
   },
+  isLoading: false,
   query: getFilters(),
 })
 export class JobList {
@@ -108,11 +109,16 @@ export class JobList {
   }
 
   fetch = () => {
+    this.isLoading = true
     return this.queueAPI.post(this.url, this.query.where).then(action((jobs) => {
+      this.isLoading = false
       this.data.url = this.url
       this.data.jobs = jobs
       return this.data.jobs
-    }))
+    })).catch((error) => {
+      this.isLoading = false
+      throw error
+    })
   }
 
   resolve = () => {
@@ -137,6 +143,8 @@ export class JobList {
 
   search = action(() => {
     const where = {}
+    const state = this.query.state.join(' ').trim()
+
     where.created = {
       $between: [this.query.dateEnd  - browserConfig.utcOffset * 60 * 1000, this.query.dateStart - browserConfig.utcOffset * 60 * 1000],
     }
@@ -146,9 +154,9 @@ export class JobList {
     if (this.query.status) {
       where.status = this.query.status
     }
-    if (this.query.state) {
+    if (state) {
       where.state = {
-        $like: '%' + this.query.state.trim().replace(/\s+/gi, '%') + '%'
+        $like: '%' + state.replace(/\s+/gi, '%') + '%'
       }
     }
 

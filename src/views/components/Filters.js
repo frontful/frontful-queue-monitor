@@ -24,7 +24,7 @@ import {txt} from '../../content'
       dateStart: jobs.query.dateStart,
       dateEnd: jobs.query.dateEnd,
       job: jobs.query.job,
-      state: jobs.query.state,
+      state: jobs.query.state.map((state) => state),
       status: jobs.query.status,
       tag01: jobs.query.tag01,
       tag02: jobs.query.tag02,
@@ -52,7 +52,10 @@ export default class Filters extends React.PureComponent {
                 <DatePicker
                   readOnly
                   selected={moment(filters.dateStart).utc()}
-                  onChange={(date) => {query.dateStart = date.utc().valueOf()}}
+                  onChange={(date) => {
+                    query.dateStart = date.utc().valueOf()
+                    search()
+                  }}
                   showTimeSelect
                   dateFormat="YYYY-MM-DD HH:mm"
                 />
@@ -66,7 +69,10 @@ export default class Filters extends React.PureComponent {
                 <DatePicker
                   readOnly
                   selected={moment(filters.dateEnd).utc()}
-                  onChange={(date) => {query.dateEnd = date.utc().valueOf()}}
+                  onChange={(date) => {
+                    query.dateEnd = date.utc().valueOf()
+                    search()
+                  }}
                   showTimeSelect
                   dateFormat="YYYY-MM-DD HH:mm"
                 />
@@ -77,7 +83,10 @@ export default class Filters extends React.PureComponent {
                 <div>{txt(`filters.job`)}</div>
               </td>
               <td>
-                <select value={filters.job} onChange={(event) => {query.job = event.target.value}}>
+                <select value={filters.job} onChange={(event) => {
+                  query.job = event.target.value
+                  search()
+                }}>
                   <option></option>
                   {Object.keys(browserConfig.content).map((key) => (
                     <option key={key} value={key}>{txt(`${key}.name`)}</option>
@@ -90,7 +99,10 @@ export default class Filters extends React.PureComponent {
                 <div>{txt(`filters.status`)}</div>
               </td>
               <td>
-                <select value={filters.status} onChange={(event) => {query.status = event.target.value}}>
+                <select value={filters.status} onChange={(event) => {
+                  query.status = event.target.value
+                  search()
+                }}>
                   <option></option>
                   {Object.keys(txt('enum.status')).map((key) => (
                     <option key={key} value={key}>{txt(`enum.status.${key}`)}</option>
@@ -102,14 +114,16 @@ export default class Filters extends React.PureComponent {
         </table>
         <table>
           <tbody>
-            <tr>
-              <td className={style.css('title')}>
-                <div>{txt(`filters.state`)}</div>
-              </td>
-              <td>
-                <input value={filters.state} onChange={(event) => {query.state = event.target.value}}></input>
-              </td>
-            </tr>
+            {filters.state.map((state, idx) => (
+              <tr key={`state_${idx}`}>
+                <td className={style.css('title')}>
+                  <div>{txt(`filters.state.part${idx}`)}</div>
+                </td>
+                <td>
+                  <input value={state} onChange={(event) => {query.state[idx] = event.target.value}}></input>
+                </td>
+              </tr>
+            ))}
             {browserConfig.tags.map((tag) => (
               <tr key={tag.name}>
                 <td className={style.css('title')}>

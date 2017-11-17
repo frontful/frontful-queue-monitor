@@ -28,7 +28,7 @@ export default class JobListItem extends React.PureComponent {
           <td><div className={style.css('accent', state.status)}></div></td>
           <td>{txt(`${state.name}.name`)}</td>
           <td>{date(state.created)}</td>
-          <td>{`${tasks.filter((task) => task.status === 'success').length}/${tasks.length}`}</td>
+          <td>{`${tasks.filter((task) => task.status === 'success' || task.status === 'warning').length}/${tasks.length}`}</td>
           <td>{txt(`enum.status.${state.status}`)}</td>
           <td>{time(state.modified)}</td>
         </tr>

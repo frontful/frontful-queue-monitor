@@ -105,7 +105,7 @@ export default class JobDetails extends React.PureComponent {
 
   render() {
     const {style, state: {tasks}, state, message, setXml, setJson, toggleMessage, viewMessage} = this.props
-    const canEdit = state.status === 'success' || state.status === 'error'
+    const canEdit = state.status === 'success' || state.status === 'error' || state.status === 'warning'
     return (
       <table className={style.css('job_details')}>
         <colgroup>
@@ -143,7 +143,7 @@ export default class JobDetails extends React.PureComponent {
           {!!state.status_details &&
             <tr>
               <td colSpan="6" className={style.css('details')}>
-                <pre className={style.css('status_details')}>
+                <pre className={style.css('status_details', state.status)}>
                   {state.status_details}
                 </pre>
               </td>

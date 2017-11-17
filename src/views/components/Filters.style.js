@@ -16,6 +16,8 @@ export default ({css}) => {
     cursor: 'pointer',
     outline: 'none',
     padding: '3px',
+    borderRadius: '3px',
+    userSelect: 'none',
   })
 
   css('.filters button:disabled', {

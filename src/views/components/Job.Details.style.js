@@ -47,6 +47,11 @@ export default ({css}) => {
     backgroundColor: '#73A937',
   })
 
+  css('.accent.warning', {
+    // backgroundColor: '#D49C1E',
+    backgroundColor: '#73A937',
+  })
+
   css('.accent.error', {
     backgroundColor: '#D4421E',
   })
@@ -124,4 +129,8 @@ export default ({css}) => {
     font: 'inherit',
     margin: '5px 0',
   })
+
+  // css('.status_details.warning', {
+  //   color: '#D49C1E',
+  // })
 }

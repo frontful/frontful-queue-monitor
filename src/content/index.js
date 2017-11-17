@@ -10,6 +10,7 @@ const content = objectPath({
       queued: 'Queued',
       processing: 'Processing',
       waiting: 'Waiting',
+      warning: 'Warning',
     },
   },
   filters: {
@@ -17,7 +18,14 @@ const content = objectPath({
     dateEnd: 'Date end',
     job: 'Job',
     status: 'Status',
-    state: 'Contains (in state)',
+    state: {
+      part0: 'Contains (in state)',
+      part1: 'and',
+      part2: 'and',
+      part3: 'and',
+      part4: 'and',
+      part5: 'and',
+    },
     filter: 'Filter',
     clear: 'Clear',
   },
