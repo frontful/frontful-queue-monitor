@@ -48,7 +48,6 @@ export default ({css}) => {
   })
 
   css('.accent.warning', {
-    // backgroundColor: '#D49C1E',
     backgroundColor: '#73A937',
   })
 
@@ -129,8 +128,4 @@ export default ({css}) => {
     font: 'inherit',
     margin: '5px 0',
   })
-
-  // css('.status_details.warning', {
-  //   color: '#D49C1E',
-  // })
 }

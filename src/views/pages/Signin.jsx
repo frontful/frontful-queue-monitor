@@ -41,9 +41,4 @@ export default class Signin extends React.PureComponent {
       </div>
     )
   }
-
-  // TODO: Remove this when React 16 fixes SSR `autoFocus`
-  componentDidMount() {
-    this.refs.password.focus()
-  }
 }

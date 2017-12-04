@@ -38,7 +38,6 @@ export default ({css}) => {
   })
 
   css('.accent.warning', {
-    // backgroundColor: '#D49C1E',
     backgroundColor: '#73A937',
     visibility: 'hidden',
   })
